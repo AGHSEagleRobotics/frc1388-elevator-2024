@@ -13,7 +13,7 @@ public class ElevatorCommand extends CommandBase {
   private final ElevatorSubsystem m_subsystem;
 
   /**
-   * Creates a new ExampleCommand.
+   * Creates a new ElevatorCommand.
    *
    * @param subsystem The subsystem used by this command.
    */

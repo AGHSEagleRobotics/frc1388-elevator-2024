@@ -42,7 +42,7 @@ public class RobotContainer {
    * joysticks}.
    */
   private void configureBindings() {
-    // Schedule `ExampleCommand` when `exampleCondition` changes to `true`
+    // Schedule `ElevatorCommand` when `exampleCondition` changes to `true`
     new Trigger(m_elevatorSubsystem::exampleCondition)
         .onTrue(new ElevatorCommand(m_elevatorSubsystem));
 
