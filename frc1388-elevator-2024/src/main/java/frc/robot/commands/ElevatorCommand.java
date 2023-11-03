@@ -5,20 +5,26 @@
 package frc.robot.commands;
 
 import frc.robot.subsystems.ElevatorSubsystem;
+
+import java.util.function.Supplier;
+
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
-/** An example command that uses an example subsystem. */
+/** An elevator command that uses an elevator subsystem. */
 public class ElevatorCommand extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
   private final ElevatorSubsystem m_subsystem;
+  private final Supplier <Double> m_dpadValue;
 
   /**
    * Creates a new ElevatorCommand.
    *
    * @param subsystem The subsystem used by this command.
    */
-  public ElevatorCommand(ElevatorSubsystem subsystem) {
+  public ElevatorCommand(ElevatorSubsystem subsystem, Supplier <Double> dpadValue ) {
     m_subsystem = subsystem;
+    m_dpadValue = dpadValue; 
+
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem);
   }
@@ -29,7 +35,17 @@ public class ElevatorCommand extends CommandBase {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+    double dpad = m_dpadValue.get();
+    if(dpad == 0){ //if dpad = 0, dpad up was pressed
+      m_subsystem.setPower(0.2);
+    } 
+      else if(dpad == 180){ //if dpad = 0, dpad down was pressed
+      m_subsystem.setPower(-0.2);
+    } else{
+      m_subsystem.setPower(0);
+    } 
+  }
 
   // Called once the command ends or is interrupted.
   @Override
