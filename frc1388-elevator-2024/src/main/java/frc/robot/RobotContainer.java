@@ -5,7 +5,7 @@
 package frc.robot;
 
 import frc.robot.Constants.OperatorConstants;
-import frc.robot.commands.Autos;
+//import frc.robot.commands.Autos;
 import frc.robot.commands.ElevatorCommand;
 import frc.robot.subsystems.ElevatorSubsystem;
 import edu.wpi.first.wpilibj.XboxController;
@@ -21,7 +21,7 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  private final ElevatorSubsystem m_elevatorSubsystem = new ElevatorSubsystem();
+  //private final ElevatorSubsystem m_elevatorSubsystem = new ElevatorSubsystem();
 
   // Replace with CommandPS4Controller or CommandJoystick if needed
   private final XboxController m_driverController =  new XboxController(0);
@@ -47,21 +47,25 @@ public class RobotContainer {
    */
   private void configureBindings() {
     // Schedule `ElevatorCommand` when `exampleCondition` changes to `true`
-    new Trigger(m_elevatorSubsystem::exampleCondition)
-        .onTrue(new ElevatorCommand(m_elevatorSubsystem));
+    //new Trigger(m_elevatorSubsystem::exampleCondition)
+    //    .onTrue(new ElevatorCommand(m_elevatorSubsystem));
 
     // Schedule `exampleMethodCommand` when the Xbox controller's B button is pressed,
     // cancelling on release.
-    m_driverController.b().whileTrue(m_elevatorSubsystem.exampleMethodCommand());
+    // m_driverController.b().whileTrue(m_elevatorSubsystem.setPower(0));
   }
+
+public Command getAutonomousCommand() {
+    return null;
+}
 
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
    *
    * @return the command to run in autonomous
    */
-  public Command getAutonomousCommand() {
+  //public Command getAutonomousCommand() {
     // An example command will be run in autonomous
-    return Autos.exampleAuto(m_elevatorSubsystem);
+   // return Autos.exampleAuto(m_elevatorSubsystem);
   }
-}
+//}
