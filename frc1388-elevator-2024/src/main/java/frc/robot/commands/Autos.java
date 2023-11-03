@@ -8,13 +8,14 @@ import frc.robot.subsystems.ElevatorSubsystem;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.Commands;
 
-public final class Autos {
+//public final class Autos {
   /** Example static factory for an autonomous command. */
-  public static CommandBase exampleAuto(ElevatorSubsystem subsystem) {
-    return Commands.sequence(subsystem.exampleMethodCommand(), new ElevatorCommand(subsystem));
-  }
+  // public static CommandBase exampleAuto(ElevatorSubsystem subsystem) {
+    
+    // return Commands.sequence(subsystem.exampleMethodCommand(), new ElevatorCommand(subsystem));
+ // }
 
-  private Autos() {
-    throw new UnsupportedOperationException("This is a utility class!");
-  }
-}
+//  private Autos() {
+//    throw new UnsupportedOperationException("This is a utility class!");
+
+ // }
