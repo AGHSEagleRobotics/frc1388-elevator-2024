@@ -8,6 +8,10 @@ import frc.robot.Constants.OperatorConstants;
 //import frc.robot.commands.Autos;
 import frc.robot.commands.ElevatorCommand;
 import frc.robot.subsystems.ElevatorSubsystem;
+
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
@@ -20,8 +24,11 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
  * subsystems, commands, and trigger mappings) should be declared here.
  */
 public class RobotContainer {
+// The robot's motors are defined here
+  private final CANSparkMax m_elevatorMotor1 = new CANSparkMax(1, MotorType.kBrushless);
+  private final CANSparkMax m_elevatorMotor2 = new CANSparkMax(2, MotorType.kBrushless);
   // The robot's subsystems and commands are defined here...
-  private final ElevatorSubsystem m_elevatorSubsystem = new ElevatorSubsystem();
+  private final ElevatorSubsystem m_elevatorSubsystem = new ElevatorSubsystem(m_elevatorMotor1, m_elevatorMotor2);
 
   // Replace with CommandPS4Controller or CommandJoystick if needed
   private final XboxController m_driverController =  new XboxController(0);

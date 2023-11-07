@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class ElevatorSubsystem extends SubsystemBase {
   private final CANSparkMax m_elevatorMotor1;
   private final CANSparkMax m_elevatorMotor2;
+  
   /** Creates a new ExampleSubsystem. */
   public ElevatorSubsystem(CANSparkMax elevatorMotor1, CANSparkMax elevatorMotor2) {
     m_elevatorMotor1 = elevatorMotor1;

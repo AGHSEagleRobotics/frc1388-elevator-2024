@@ -14,14 +14,14 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 public class ElevatorCommand extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
   private final ElevatorSubsystem m_subsystem;
-  private final Supplier <Double> m_dpadValue;
+  private final Supplier <Integer> m_dpadValue;
 
   /**
    * Creates a new ElevatorCommand.
    *
    * @param subsystem The subsystem used by this command.
    */
-  public ElevatorCommand(ElevatorSubsystem subsystem, Supplier <Double> dpadValue ) {
+  public ElevatorCommand(ElevatorSubsystem subsystem, Supplier <Integer> dpadValue ) {
     m_subsystem = subsystem;
     m_dpadValue = dpadValue; 
 
