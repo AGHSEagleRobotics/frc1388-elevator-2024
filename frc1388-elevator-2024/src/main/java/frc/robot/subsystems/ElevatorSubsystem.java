@@ -20,7 +20,7 @@ public class ElevatorSubsystem extends SubsystemBase {
     m_elevatorMotor2 = elevatorMotor2;
     m_elevatorMotor1.restoreFactoryDefaults();
     m_elevatorMotor2.restoreFactoryDefaults();
-    m_elevatorMotor2.follow(m_elevatorMotor1);
+    //m_elevatorMotor2.follow(m_elevatorMotor1);
     m_elevatorMotor1.setIdleMode(IdleMode.kBrake);
     m_elevatorMotor2.setIdleMode(IdleMode.kBrake);
   }
@@ -34,6 +34,7 @@ public class ElevatorSubsystem extends SubsystemBase {
 
   public double setPower(double power) {
     m_elevatorMotor1.set(power);
+    m_elevatorMotor2.set(power);
     return power;
     
     //power is 1 to -1, in terms of speed
