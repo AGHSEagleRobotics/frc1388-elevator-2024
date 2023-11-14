@@ -37,10 +37,9 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the trigger bindings
     configureBindings();
-    m_elevatorSubsystem.setDefaultCommand(new ElevatorCommand(m_elevatorSubsystem,
-    () -> m_driverController.getPOV()
-    
-    ));
+    m_elevatorSubsystem.setDefaultCommand(
+      new ElevatorCommand(m_elevatorSubsystem, () -> m_driverController.getPOV() )
+    );
   }
 
   /**

@@ -8,7 +8,6 @@ package frc.robot.subsystems;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMax.IdleMode;
 
-import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class ElevatorSubsystem extends SubsystemBase {
@@ -19,12 +18,11 @@ public class ElevatorSubsystem extends SubsystemBase {
   public ElevatorSubsystem(CANSparkMax elevatorMotor1, CANSparkMax elevatorMotor2) {
     m_elevatorMotor1 = elevatorMotor1;
     m_elevatorMotor2 = elevatorMotor2;
+    m_elevatorMotor1.restoreFactoryDefaults();
+    m_elevatorMotor2.restoreFactoryDefaults();
     m_elevatorMotor2.follow(m_elevatorMotor1);
     m_elevatorMotor1.setIdleMode(IdleMode.kBrake);
     m_elevatorMotor2.setIdleMode(IdleMode.kBrake);
-
-
-
   }
 
   /**
@@ -40,16 +38,6 @@ public class ElevatorSubsystem extends SubsystemBase {
     
     //power is 1 to -1, in terms of speed
 
-  }
-
-  /**
-   * An example method querying a boolean state of the subsystem (for example, a digital sensor).
-   *
-   * @return value of some boolean subsystem state, such as a digital sensor.
-   */
-  public boolean exampleCondition() {
-    // Query some boolean state, such as a digital sensor.
-    return false;
   }
 
   @Override
