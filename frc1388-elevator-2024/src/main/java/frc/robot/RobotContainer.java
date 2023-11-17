@@ -12,6 +12,7 @@ import frc.robot.subsystems.ElevatorSubsystem;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
@@ -27,8 +28,13 @@ public class RobotContainer {
 // The robot's motors are defined here
   private final CANSparkMax m_elevatorMotor1 = new CANSparkMax(1, MotorType.kBrushless);
   private final CANSparkMax m_elevatorMotor2 = new CANSparkMax(2, MotorType.kBrushless);
+
+  //The robot's sensors/limit switches are defined here
+  private final DigitalInput m_topLimitSwitch = new DigitalInput(1);
+  private final DigitalInput m_bottomLimitSwitch = new DigitalInput(0);
+
   // The robot's subsystems and commands are defined here...
-  private final ElevatorSubsystem m_elevatorSubsystem = new ElevatorSubsystem(m_elevatorMotor1, m_elevatorMotor2);
+  private final ElevatorSubsystem m_elevatorSubsystem = new ElevatorSubsystem(m_elevatorMotor1, m_elevatorMotor2, m_topLimitSwitch, m_bottomLimitSwitch);
 
   // Replace with CommandPS4Controller or CommandJoystick if needed
   private final XboxController m_driverController =  new XboxController(0);
