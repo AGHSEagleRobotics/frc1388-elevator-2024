@@ -44,7 +44,7 @@ public class RobotContainer {
     // Configure the trigger bindings
     configureBindings();
     m_elevatorSubsystem.setDefaultCommand(
-      new ElevatorCommand(m_elevatorSubsystem, () -> m_driverController.getPOV() )
+      new ElevatorCommand(m_elevatorSubsystem, () -> m_driverController.getRightY() )
     );
   }
 
